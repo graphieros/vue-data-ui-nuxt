@@ -5,6 +5,279 @@ declare module 'vue-data-ui' {
         [key: string]: unknown;
     }
 
+    export type VueUiSparkHistogramConfig = {
+        style?: {
+            backgroundColor?: string;
+            fontFamily: string;
+            layout?: {
+                height?: number;
+                width?: number;
+                padding?: {
+                    top?: number;
+                    right?: number;
+                    left?: number;
+                    bottom?: number;
+                };
+            };
+            bars?: {
+                strokeWidth?: number;
+                colors?: {
+                    positive?: number;
+                    negative?: number;
+                    gradient?: {
+                        show?: boolean;
+                    };
+                };
+                borderRadius?: number;
+                gap?: number;
+            };
+            labels?: {
+                value?: {
+                    fontSize?: number;
+                    color?: string;
+                    bold?: boolean;
+                    rounding?: number;
+                    prefix?: string;
+                    suffix?: string;
+                };
+                valueLabel?: {
+                    fontSize?: number;
+                    color?: string;
+                    bold?: boolean;
+                    rounding?: number;
+                };
+                timeLabel?: {
+                    fontSize?: number;
+                    color?: string;
+                    bold?: boolean;
+                };
+            };
+            title?: {
+                textAlign?: "left" | "right" | "center";
+                text?: string;
+                color?: string;
+                fontSize?: number;
+                bold?: boolean;
+                margin?: string;
+                subtitle?: {
+                    color?: string;
+                    text?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                };
+            };
+        };
+    };
+
+    export type VueUiSparkHistogramDatasetItem = {
+        value: number;
+        valueLabel?: string;
+        timeLabel?: string;
+        intensity?: number & { 0: 0; 1: 1 };
+    }
+
+    export const VueUiSparkHistogram: DefineComponent<{
+        config?: VueUiSparkHistogramConfig,
+        dataset: VueUiSparkHistogramDatasetItem[]
+    }>;
+
+    export type VueUiSparkStackBarConfig = {
+        style?: {
+            backgroundColor?: string;
+            fontFamily?: string;
+            bar?: {
+                gradient?: {
+                    show?: boolean;
+                    intensity?: number;
+                    underlayerColor?: string;
+                };
+            };
+            legend?: {
+                textAlign?: "left" | "right" | "center";
+                show?: boolean;
+                margin?: string;
+                fontSize?: number;
+                name?: {
+                    color?: string;
+                    bold?: boolean;
+                };
+                value?: {
+                    show?: boolean;
+                    color?: string;
+                    bold?: boolean;
+                    prefix?: string;
+                    suffix?: string;
+                    rounding?: number;
+                };
+                percentage?: {
+                    show?: boolean;
+                    color?: string;
+                    bold?: boolean;
+                    rounding?: number;
+                };
+            };
+            title?: {
+                textAlign?: "left" | "center" | "right";
+                text?: string;
+                color?: string;
+                fontSize?: number;
+                bold?: boolean;
+                margin?: string;
+                subtitle?: {
+                    color?: string;
+                    text?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                };
+            };
+        };
+    };
+
+    export type VueUiSparkStackBarDatasetItem = {
+        name: string;
+        value: number;
+        color?: string;
+    }
+
+    export const VueUiSparkstackbar: DefineComponent<{
+        config?: VueUiSparkStackBarConfig,
+        dataset: VueUiSparkStackBarDatasetItem[]
+    }>;
+
+    export type VueUiThermometerConfig = {
+        style?: {
+            fontFamily?: string;
+            chart?: {
+                backgroundColor?: string;
+                color?: string;
+                height?: number;
+                thermometer?: {
+                    width?: number;
+                };
+                padding?: {
+                    top?: number;
+                    bottom?: number;
+                    left?: number;
+                    right?: number;
+                };
+                graduations?: {
+                    show?: boolean;
+                    sides?: "left" | "right" | "both" | "none";
+                    height?: number;
+                    stroke?: string;
+                    strokeWidth?: number;
+                    showIntermediate?: boolean;
+                    gradient?: {
+                        show?: boolean;
+                        intensity?: number;
+                    };
+                };
+                animation?: {
+                    use?: boolean;
+                    speedMs?: number;
+                };
+                label?: {
+                    fontSize?: number;
+                    rounding?: number;
+                    bold?: boolean;
+                };
+            };
+            title?: {
+                useDiv?: boolean;
+                text?: string;
+                color?: string;
+                fontSize?: number;
+                bold?: boolean;
+                subtitle?: {
+                    color?: string;
+                    text?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                };
+            };
+        };
+        userOptions?: {
+            show?: boolean;
+            title?: string;
+            labels?: {
+                useDiv?: string;
+            };
+        };
+    };
+
+    export type VueUiThermometerDataset = {
+        value: number;
+        from: number;
+        to: number;
+        steps?: number;
+        colors?: {
+            from?: string;
+            to?: string;
+        }
+    }
+
+    export const VueUiThermometer: DefineComponent<{
+        config?: VueUiThermometerConfig,
+        dataset: VueUiThermometerDataset
+    }>;
+
+    export type VueUiRelationCircleConfig = {
+        style?: {
+            backgroundColor?: string;
+            fontFamily?: string;
+            size?: number;
+            limit?: number;
+            animation?: {
+                show?: boolean;
+                speedMs?: number;
+            };
+            labels?: {
+                color?: string;
+                fontSize?: number;
+            };
+            links?: {
+                curved?: boolean;
+                maxWidth?: number;
+            };
+            circle?: {
+                radiusProportion?: number;
+                stroke?: string;
+                strokeWidth?: number;
+                offsetY?: number;
+            };
+            plot?: {
+                radius?: number;
+                color?: string;
+            };
+            title?: {
+                useDiv?: boolean;
+                text?: string;
+                color?: string;
+                fontSize?: number;
+                bold?: boolean;
+                subtitle?: {
+                    color?: string;
+                    text?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                };
+            };
+        };
+    };
+
+    export type VueUiRelationCircleDatasetItem = {
+        id: string | number;
+        label: string;
+        relations: Array<string | number>;
+        weights?: number[];
+        color?: string;
+    }
+
+    export const VueUiRelationCircle: DefineComponent<{
+        config?: VueUiRelationCircleConfig,
+        dataset: VueUiRelationCircleDatasetItem[]
+    }>;
+
     export type VueUiAnnotatorConfig = {
         style?: {
             backgroundColor?: string;
@@ -300,6 +573,7 @@ declare module 'vue-data-ui' {
     }>;
 
     export type VueUiCandlestickConfig = {
+        useCssAnimation?: boolean;
         style?: {
             backgroundColor?: string;
             color?: string;
@@ -449,6 +723,7 @@ declare module 'vue-data-ui' {
     }
 
     export type VueUiScatterConfig = {
+        useCssAnimation?: boolean;
         style?: {
             backgroundColor?: string;
             color?: string;
@@ -701,6 +976,8 @@ declare module 'vue-data-ui' {
     }>;
 
     export type VueUiXyConfig = {
+        useCanvas?: boolean;
+        useCssAnimation?: boolean;
         chart?: {
             fontFamily?: string;
             backgroundColor?: string;
@@ -787,6 +1064,7 @@ declare module 'vue-data-ui' {
             };
         };
         bar?: {
+            borderRadius?: number;
             useGradient?: boolean;
             labels?: {
                 show?: boolean;
@@ -805,6 +1083,10 @@ declare module 'vue-data-ui' {
                 rounding?: number;
                 color?: string;
             };
+            area?: {
+                useGradient?: boolean;
+                opacity?: number;
+            }
         };
         plot?: {
             radius?: number;
@@ -839,6 +1121,7 @@ declare module 'vue-data-ui' {
         color?: string;
         dashed?: boolean;
         useTag?: "start" | "end";
+        useArea?: boolean;
         dataLabels?: boolean;
         useProgression?: boolean;
     };
@@ -849,6 +1132,7 @@ declare module 'vue-data-ui' {
     }>
 
     export type VueUiDonutConfig = {
+        useCssAnimation?: boolean;
         style?: {
             fontFamily?: string;
             chart?: {
@@ -1080,6 +1364,7 @@ declare module 'vue-data-ui' {
     }>;
 
     export type VueUiRadarConfig = {
+        useCssAnimation?: boolean;
         style?: {
             fontFamily?: string;
             chart?: {
@@ -1211,6 +1496,7 @@ declare module 'vue-data-ui' {
     };
 
     export type VueUiQuadrantConfig = {
+        useCssAnimation?: boolean;
         style?: {
             fontFamily?: string;
             chart?: {
@@ -1668,6 +1954,7 @@ declare module 'vue-data-ui' {
     };
 
     export type VueUiOnionConfig = {
+        useCssAnimation?: boolean;
         style?: {
             fontFamily?: string;
             chart?: {
@@ -1772,6 +2059,7 @@ declare module 'vue-data-ui' {
     };
 
     export type VueUiVerticalBarConfig = {
+        useCssAnimation?: boolean;
         style?: {
             fontFamily?: string;
             chart?: {
@@ -1917,6 +2205,7 @@ declare module 'vue-data-ui' {
     };
 
     export type VueUiSparklineConfig = {
+        type?: "line" | "bar";
         style?: {
             backgroundColor?: string;
             fontFamily?: string;
@@ -1927,6 +2216,11 @@ declare module 'vue-data-ui' {
             line?: {
                 color?: string;
                 strokeWidth?: number;
+                smooth?: boolean;
+            };
+            bar?: {
+                borderRadius?: number;
+                color?: string;
             };
             zeroLine?: {
                 color?: string;
@@ -1941,6 +2235,8 @@ declare module 'vue-data-ui' {
             verticalIndicator?: {
                 show?: boolean;
                 strokeWidth?: number;
+                color?: string;
+                strokeDasharray?: number;
             };
             dataLabel?: {
                 position?: "left" | "right";
@@ -2433,6 +2729,7 @@ declare module 'vue-data-ui' {
                 };
             };
             rating?: {
+                useSmiley?: boolean;
                 color?: string;
                 filled?: boolean;
                 strokeWidth?: number;
