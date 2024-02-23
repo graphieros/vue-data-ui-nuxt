@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { type VueUiXyConfig, type VueUiXyDatasetItem } from "vue-data-ui";
+import { type VueUiXyConfig, type VueUiXyDatasetItem, VueUiXy } from "vue-data-ui";
 import "vue-data-ui/style.css";
 
 const config = ref<VueUiXyConfig>({

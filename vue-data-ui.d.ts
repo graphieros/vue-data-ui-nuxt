@@ -5,10 +5,740 @@ declare module 'vue-data-ui' {
         [key: string]: unknown;
     }
 
+    export type VueUiMiniLoaderConfig = {
+        type?: "line" | "bar" | "onion";
+        onion?: {
+            gutterColor?: string;
+            gutterOpacity?: number;
+            gutterBlur?: number;
+            trackHueRotate?: number;
+            trackBlur?: number;
+            trackColor?: string;
+        };
+        line?: {
+            gutterColor?: string;
+            gutterOpacity?: number;
+            gutterBlur?: number;
+            trackHueRotate?: number;
+            trackBlur?: number;
+            trackColor?: string;
+        };
+        bar?: {
+            gutterColor?: string;
+            gutterOpacity?: number;
+            gutterBlur?: number;
+            trackHueRotate?: number;
+            trackBlur?: number;
+            trackColor?: string;
+        }
+    }
+
+    export const VueUiMiniLoader: DefineComponent<{
+        config?: VueUiMiniLoaderConfig;
+    }>
+
+    export const Arrow: DefineComponent<{
+        markerEnd?: boolean,
+        markerSize?: number,
+        markerStart?: boolean,
+        stroke?: string,
+        strokeDasharray?: number,
+        strokeLinecap?: "round" | "butt" | "square",
+        strokeWidth?: number,
+        x1: number,
+        x2: number,
+        y1: number,
+        y2: number
+    }>
+
+    export type VueUiTableSparklineDatasetItem = {
+        name: string;
+        values: number[];
+        color?: string;
+    }
+
+    export type VueUiTableSparklineConfig = {
+        responsiveBreakpoint?: number;
+        showAverage?: boolean;
+        showMedian?: boolean;
+        showTotal?: boolean;
+        roundingAverage?: number;
+        roundingMedian?: number;
+        roundingValues?: number;
+        roundingTotal?: number;
+        showSparklines?: true,
+        fontFamily?: string;
+        colNames?: string[];
+        sparkline?: {
+            useGradient?: boolean;
+            showArea?: boolean;
+            strokeWidth?: number;
+            type?: "line" | "bar",
+            smooth?: boolean;
+        };
+        translations?: {
+            serie?: string;
+            total?: string;
+            average?: string;
+            median?: string;
+            chart?: string;
+        };
+        title?: {
+            backgroundColor?: string;
+            text?: string;
+            fontSize?: number;
+            color?: string;
+            bold?: boolean;
+            textAlign?: "left" | "center" | "right";
+            subtitle?: {
+                text?: string;
+                color?: string;
+                fontSize?: number;
+                bold?: boolean;
+            };
+        };
+        thead?: {
+            backgroundColor?: string;
+            color?: string;
+            fontSize?: number;
+            outline?: string;
+            textAlign?: "left" | "center" | "right";
+            bold?: boolean;
+        },
+        tbody?: {
+            backgroundColor?: string;
+            color?: string;
+            fontSize?: number;
+            outline?: string;
+            textAlign?: "left" | "center" | "right";
+            bold?: boolean;
+        };
+        userOptions?: {
+            show?: boolean;
+        }
+    };
+
+    export const VueUiTableSparkline: DefineComponent<{
+        dataset: VueUiTableSparklineDatasetItem[],
+        config: VueUiTableSparklineConfig
+    }>
+
+    export type VueUiMoleculeDatasetNode = {
+        name: string;
+        details?: string;
+        nodes?: VueUiMoleculeDatasetNode[];
+    };
+
+    export type VueUiMoleculeConfig = {
+        style?: {
+            fontFamily?: string;
+            chart?: {
+                backgroundColor?: string;
+                color?: string;
+                nodes?: {
+                    stroke?: string;
+                    strokeHovered?: string;
+                };
+                links?: {
+                    stroke?: string;
+                };
+                title?: {
+                    text?: string;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    subtitle?: {
+                        color?: string;
+                        text?: string;
+                        fontSize?: number;
+                        bold?: boolean;
+                    };
+                };
+                tooltip?: {
+                    show?: boolean;
+                    color?: string;
+                    backgroundColor?: string;
+                    fontSize?: number;
+                };
+                zoom?: {
+                    speed?: number;
+                };
+            };
+        };
+        table?: {
+            show?: boolean;
+            responsiveBreakpoint?: number;
+            th?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+            };
+            td?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+            };
+            translations?: {
+                nodeName?: string;
+                details?: string;
+                parentNode?: string;
+            };
+        };
+        userOptions?: {
+            show?: boolean;
+        };
+    };
+
+    export const VueUiMolecule: DefineComponent<{
+        dataset: VueUiMoleculeDatasetNode[],
+        config?: VueUiMoleculeConfig
+    }>
+
+    export type VueUiDigitsConfig = {
+        backgroundColor?: string;
+        height?: string;
+        width?: string;
+        digits?: {
+            color?: string;
+            skeletonColor?: string;
+        }
+    }
+
+    export const VueUiDigits: DefineComponent<{
+        dataset: number,
+        config?: VueUiDigitsConfig
+    }>;
+
+    export type VueUi3dBarDataset = {
+        percentage: number;
+    };
+
+    export type VueUi3dBarConfig = {
+        style?: {
+            fontFamily?: string;
+            shape?: "bar" | "tube";
+            chart?: {
+                animation?: {
+                    use?: boolean;
+                    speed?: number;
+                    acceleration?: number;
+                };
+                backgroundColor?: string;
+                color?: string;
+                bar?: {
+                    color?: string;
+                    stroke?: string;
+                    strokeWidth?: number;
+                };
+                box?: {
+                    stroke?: string;
+                    strokeWidth?: number;
+                    strokeDasharray?: number; 2,
+                    dimensions?: {
+                        width?: number;
+                        height?: number;
+                        top?: number;
+                        bottom?: number;
+                        left?: number;
+                        right?: number;
+                        perspective?: number;
+                    };
+                };
+                title?: {
+                    text?: string;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    subtitle?: {
+                        color?: string;
+                        text?: string;
+                        fontSize?: number;
+                        bold?: boolean;
+                    };
+                };
+                dataLabel?: {
+                    show?: boolean;
+                    bold?: boolean;
+                    color?: string;
+                    fontSize?: number;
+                    rounding?: number;
+                };
+            };
+        };
+        userOptions?: {
+            show?: boolean;
+        }
+    };
+
+    export const VueUi3dBar: DefineComponent<{
+        config?: VueUi3dBarConfig,
+        dataset: VueUi3dBarDataset
+    }>;
+
+    export type VueUiMoodRadarDataset = {
+        "1": number;
+        "2": number;
+        "3": number;
+        "4": number;
+        "5": number;
+    }
+
+    export type VueUiMoodRadarConfig = {
+        style?: {
+            fontFamily?: string;
+            chart?: {
+                backgroundColor?: string;
+                color?: string;
+                layout?: {
+                    grid?: {
+                        show?: boolean;
+                        stroke?: string;
+                        strokeWidth?: number;
+                    };
+                    outerPolygon?: {
+                        stroke?: string;
+                        strokeWidth?: number;
+                    };
+                    dataPolygon?: {
+                        color?: string;
+                        opacity?: 60,
+                        gradient?: {
+                            show?: boolean;
+                            intensity?: number;
+                        };
+                        stroke?: string;
+                        strokeWidth?: number;
+                    };
+                    smileys?: {
+                        strokeWidth?: number;
+                        colors?: {
+                            "1": string;
+                            "2": string;
+                            "3": string;
+                            "4": string;
+                            "5": string;
+                        };
+                    };
+                    dataLabel?: {
+                        color?: string;
+                        roundingPercentage?: number;
+                        roundingValue?: number;
+                        bold?: boolean;
+                    };
+                };
+                title?: {
+                    text?: string;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    subtitle?: {
+                        color?: string;
+                        text?: string;
+                        fontSize?: number;
+                        bold?: boolean;
+                    };
+                };
+                legend?: {
+                    color?: string;
+                    backgroundColor?: string;
+                    bold?: boolean;
+                    show?: boolean;
+                    fontSize?: number;
+                    roundingPercentage?: number;
+                    roundingValue?: number;
+                };
+            };
+        };
+        table?: {
+            show?: boolean;
+            responsiveBreakpoint?: number;
+            columnNames?: {
+                series?: string;
+                value?: string;
+                percentage?: string;
+            };
+            th?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+            };
+            td?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+                roundingValue?: number;
+                roundingPercentage?: number;
+            };
+        };
+        userOptions?: {
+            show?: boolean;
+        };
+    };
+
+    export const VueUiMoodRadar: DefineComponent<{
+        dataset: VueUiMoodRadarDataset,
+        config?: VueUiMoodRadarConfig
+    }>;
+
+    export type VueUiIconName = "annotator" | "chart3bar" | "chartAgePyramid" | "chartBar" | "chartCandlestick" | "chartChestnut" | "chartDonut" | "chartDonutEvolution" | "chartGauge" | "chartHeatmap" | "chartLine" | "chartMoodbar" | "chartOnion" | "chartQuadrant" | "chartRadar" | "chartRelationCircle" | "chartRings" | "chartScatter" | "chartSparkHistogram" | "chartSparkStackbar" | "chartTable" | "chartThermometer" | "chartTiremarks" | "chartVerticalBar" | "chartWaffle" | "chartWheel" | "close" | "dashboard" | "digit0" | "digit1" | "digit2" | "digit3" | "digit4" | "digit5" | "digit6" | "digit7" | "digit8" | "digit9" | "excel" | "image" | "labelClose" | "labelOpen" | "menu" | "moodFlat" | "moodHappy" | "moodNeutral" | "moodSad" | "pdf" | "screenshot" | "skeleton" | "smiley" | "sort" | "spin" | "star" | "tableClose" | "tableOpen";
+
+    export const VueUiIcon: DefineComponent<{
+        name: VueUiIconName;
+        stroke?: string;
+        strokeWidth?: number;
+        size?: number;
+        isSpin?: boolean;
+    }>;
+
+    export type VueUiDonutEvolutionConfig = {
+        style?: {
+            fontFamily?: string;
+            chart?: {
+                backgroundColor?: string;
+                color?: string;
+                layout?: {
+                    height?: number;
+                    width?: number;
+                    padding?: {
+                        top?: number;
+                        left?: number;
+                        right?: number;
+                        bottom?: number;
+                    };
+                    grid?: {
+                        show?: boolean;
+                        stroke?: string;
+                        strokeWidth?: number;
+                        showVerticalLines?: boolean;
+                        yAxis?: {
+                            dataLabels?: {
+                                show?: boolean;
+                                fontSize?: number;
+                                color?: string;
+                                roundingValue?: number;
+                                offsetX?: number;
+                                bold?: boolean;
+                                steps?: number;
+                            };
+                        };
+                        xAxis?: {
+                            dataLabels?: {
+                                show?: boolean;
+                                values?: string[];
+                                fontSize?: number;
+                                showOnlyFirstAndLast?: boolean;
+                                color?: string;
+                            };
+                        };
+                    };
+                    line?: {
+                        show?: boolean;
+                        stroke?: string;
+                        strokeWidth?: number;
+                    };
+                    highlighter?: {
+                        color?: string;
+                        opacity?: number;
+                    };
+                    dataLabels?: {
+                        show?: boolean;
+                        fontSize?: number;
+                        color?: string;
+                        bold?: boolean;
+                        rounding?: number;
+                        prefix?: string;
+                        suffix?: string;
+                        offsetY?: number;
+                    };
+                };
+                title?: {
+                    text?: string;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    subtitle?: {
+                        color?: string;
+                        text?: string;
+                        fontSize?: number;
+                        bold?: boolean;
+                    };
+                };
+                legend?: {
+                    color?: string;
+                    backgroundColor?: string;
+                    bold?: boolean;
+                    show?: boolean;
+                    fontSize?: number;
+                    roundingPercentage?: number;
+                    roundingValue?: number;
+                };
+            };
+        };
+        table?: {
+            show?: boolean;
+            responsiveBreakpoint?: number;
+            columnNames?: {
+                period?: string;
+                total?: string;
+            };
+            th?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+            };
+            td?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+                roundingValue?: number;
+                roundingPercentage?: number;
+            };
+        };
+        userOptions?: {
+            show?: boolean;
+        }
+    }
+
+    export type VueUiDonutEvolutionDatasetItem = {
+        name: string;
+        values: number[];
+        color?: string;
+    }
+
+    export const VueUiDonutEvolution: DefineComponent<{
+        config?: VueUiDonutEvolutionConfig,
+        dataset: VueUiDonutEvolutionDatasetItem[]
+    }>;
+
+    export type VueUiTiremarksConfig = {
+        style?: {
+            fontFamily?: string;
+            chart?: {
+                backgroundColor?: string;
+                color?: string;
+                animation?: {
+                    use?: boolean;
+                    speed?: number;
+                    acceleration?: number;
+                };
+                layout?: {
+                    display?: "horizontal" | "vertical";
+                    crescendo?: boolean;
+                    curved?: boolean;
+                    curveAngleX?: number;
+                    curveAngleY?: number;
+                    activeColor?: string;
+                    inactiveColor?: string;
+                    ticks?: {
+                        gradient?: {
+                            show?: boolean;
+                            shiftHueIntensity?: number;
+                        };
+                    };
+                };
+                percentage?: {
+                    show?: boolean;
+                    useGradientColor?: boolean;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    rounding?: 1;
+                    verticalPosition?: "bottom" | "top";
+                    horizontalPosition?: "left" | "right";
+                };
+                title?: {
+                    text?: string;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    subtitle?: {
+                        color?: string;
+                        text?: string;
+                        fontSize?: number;
+                        bold?: boolean;
+                    };
+                };
+            };
+        };
+    };
+
+    export type VueUiTiremarksDataset = {
+        percentage: number;
+    }
+
+    export const VueUiTiremarks: DefineComponent<{
+        config?: VueUiTiremarksConfig;
+        dataset: VueUiTiremarksDataset;
+    }>;
+
+    export type VueUiWheelConfig = {
+        style?: {
+            fontFamily?: string;
+            chart?: {
+                backgroundColor?: string;
+                color?: string;
+                animation?: {
+                    use?: boolean;
+                    speed?: number;
+                    acceleration?: number;
+                };
+                layout?: {
+                    wheel?: {
+                        ticks?: {
+                            rounded?: boolean;
+                            inactiveColor?: string;
+                            activeColor?: string;
+                            gradient?: {
+                                show?: boolean;
+                                shiftHueIntensity?: number;
+                            };
+                        };
+                    };
+                    innerCircle?: {
+                        show?: boolean;
+                        stroke?: string;
+                        strokeWidth?: number;
+                    };
+                    percentage?: {
+                        show?: boolean;
+                        fontSize?: number;
+                        rounding?: number;
+                        bold?: boolean;
+                    };
+                };
+                title?: {
+                    text?: string;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    subtitle?: {
+                        color?: string;
+                        text?: string;
+                        fontSize?: number;
+                        bold?: boolean;
+                    };
+                };
+            };
+        };
+        userOptions?: {
+            show?: boolean;
+            title?: string;
+        };
+    };
+
+    export type VueUiWheelDataset = {
+        percentage: number;
+    }
+
+    export const VueUiWheel: DefineComponent<{
+        dataset: VueUiWheelDataset;
+        config?: VueUiWheelConfig;
+    }>;
+
+    export type VueUiRingsConfig = {
+        useCssAnimation?: boolean;
+        useBlurOnHover?: boolean;
+        style?: {
+            fontFamily?: string;
+            chart?: {
+                backgroundColor?: string;
+                color?: string;
+                layout?: {
+                    labels?: {
+                        dataLabels?: {
+                            prefix?: string;
+                            suffix?: string;
+                        };
+                    };
+                    rings?: {
+                        strokeWidth?: number;
+                        stroke?: string;
+                        gradient?: {
+                            show?: boolean;
+                            intensity?: number;
+                            underlayerColor?: string;
+                        };
+                        useShadow?: boolean;
+                    };
+                };
+                legend?: {
+                    backgroundColor?: string;
+                    color?: string;
+                    show?: boolean;
+                    fontSize?: number;
+                    bold?: boolean;
+                    roundingValue?: number;
+                    roundingPercentage?: number;
+                };
+                title?: {
+                    text?: string;
+                    color?: string;
+                    fontSize?: number;
+                    bold?: boolean;
+                    subtitle?: {
+                        color?: string;
+                        text?: string;
+                        fontSize?: number;
+                        bold?: boolean;
+                    };
+                };
+                tooltip?: {
+                    show?: boolean;
+                    color?: string;
+                    backgroundColor?: string;
+                    fontSize?: number;
+                    showValue?: boolean;
+                    showPercentage?: boolean;
+                    roundingValue?: number;
+                    roundingPercentage?: number;
+                };
+            };
+        };
+        userOptions?: {
+            show?: boolean;
+            title?: string;
+            labels?: {
+                showTable?: string;
+            };
+        };
+        table?: {
+            show?: string;
+            responsiveBreakpoint?: number;
+            columnNames?: {
+                series?: string;
+                value?: string;
+                percentage?: string;
+            }
+            th?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+            };
+            td?: {
+                backgroundColor?: string;
+                color?: string;
+                outline?: string;
+                roundingValue?: number;
+                roundingPercentage?: number;
+            };
+        };
+    };
+
+    export type VueUiRingsDatasetItem = {
+        name: string;
+        color?: string;
+        values: number[];
+    }
+
+    export const VueUiRings: DefineComponent<{
+        config?: VueUiRingsConfig,
+        dataset: VueUiRingsDatasetItem[]
+    }>
+
     export type VueUiSparkHistogramConfig = {
         style?: {
             backgroundColor?: string;
-            fontFamily: string;
+            fontFamily?: string;
             layout?: {
                 height?: number;
                 width?: number;
@@ -20,6 +750,7 @@ declare module 'vue-data-ui' {
                 };
             };
             bars?: {
+                shape?: "circle" | "triangle" | "square" | "diamond" | "pentagon" | "hexagon" | "star";
                 strokeWidth?: number;
                 colors?: {
                     positive?: number;
@@ -39,6 +770,7 @@ declare module 'vue-data-ui' {
                     rounding?: number;
                     prefix?: string;
                     suffix?: string;
+                    offsetY?: number;
                 };
                 valueLabel?: {
                     fontSize?: number;
@@ -51,6 +783,12 @@ declare module 'vue-data-ui' {
                     color?: string;
                     bold?: boolean;
                 };
+            };
+            selector?: {
+                stroke?: string;
+                strokeDasharray?: number;
+                strokeWidth?: number;
+                borderRadius?: number;
             };
             title?: {
                 textAlign?: "left" | "right" | "center";
@@ -180,6 +918,8 @@ declare module 'vue-data-ui' {
                     fontSize?: number;
                     rounding?: number;
                     bold?: boolean;
+                    prefix?: string;
+                    suffix?: string;
                 };
             };
             title?: {
@@ -223,6 +963,7 @@ declare module 'vue-data-ui' {
 
     export type VueUiRelationCircleConfig = {
         style?: {
+            color?: string;
             backgroundColor?: string;
             fontFamily?: string;
             size?: number;
@@ -263,6 +1004,10 @@ declare module 'vue-data-ui' {
                 };
             };
         };
+        userOptions?: {
+            show?: boolean;
+            title?: string;
+        }
     };
 
     export type VueUiRelationCircleDatasetItem = {
@@ -401,6 +1146,7 @@ declare module 'vue-data-ui' {
         name: string;
         value: number;
         suffix?: string;
+        prefix?: string;
         rounding?: string;
         color?: string;
     }
@@ -416,6 +1162,7 @@ declare module 'vue-data-ui' {
             };
             gutter?: {
                 backgroundColor?: string;
+                opacity?: number;
             };
             bar?: {
                 gradient?: {
@@ -689,6 +1436,7 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -714,6 +1462,7 @@ declare module 'vue-data-ui' {
         name: string;
         x: number;
         y: number;
+        shape?: "circle" | "triangle" | "square" | "diamond" | "pentagon" | "hexagon" | "star";
     }
 
     export type VueUiScatterDatasetItem = {
@@ -833,6 +1582,7 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -849,6 +1599,7 @@ declare module 'vue-data-ui' {
                 correlationCoefficient?: string;
                 nbrPlots?: string;
                 average?: string;
+                series?: string;
             };
         };
     };
@@ -892,6 +1643,8 @@ declare module 'vue-data-ui' {
                     };
                 };
                 dataLabels?: {
+                    prefix?: string;
+                    suffix?: string;
                     xAxis?: {
                         show?: boolean;
                         values?: Array<string | number>;
@@ -931,6 +1684,8 @@ declare module 'vue-data-ui' {
                 fontSize?: number;
                 bold?: boolean;
                 roundingValue?: number;
+                position?: "right" | "bottom";
+                scaleBorderRadius?: number;
             };
             tooltip?: {
                 show?: boolean;
@@ -951,6 +1706,10 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
+            colNames?: {
+                xAxis?: string;
+            };
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -998,6 +1757,22 @@ declare module 'vue-data-ui' {
                 color?: string;
                 opacity?: number;
             };
+            highlightArea?: {
+                show?: boolean;
+                from?: number;
+                to?: number;
+                color?: string;
+                opacity?: number;
+                caption?: {
+                    text?: string;
+                    fontSize?: number;
+                    color?: number;
+                    bold?: boolean;
+                    offsetY?: boolean;
+                    width?: "auto" | number;
+                    textAlign?: "left" | "center" | "right";
+                };
+            };
             grid?: {
                 stroke?: string;
                 showVerticalLines?: boolean;
@@ -1016,11 +1791,14 @@ declare module 'vue-data-ui' {
                         values?: string[];
                         fontSize?: number;
                         showOnlyFirstAndLast?: boolean;
+                        yOffset?: number;
                     };
                 };
             };
             labels?: {
                 fontSize?: number;
+                prefix?: string;
+                suffix?: string;
             };
             legend?: {
                 color?: string;
@@ -1100,6 +1878,12 @@ declare module 'vue-data-ui' {
         };
         table?: {
             rounding?: number;
+            responsiveBreakpoint?: number;
+            sparkline?: boolean;
+            columnNames?: {
+                period?: string;
+                total?: string;
+            };
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -1133,6 +1917,7 @@ declare module 'vue-data-ui' {
 
     export type VueUiDonutConfig = {
         useCssAnimation?: boolean;
+        useBlurOnHover?: boolean;
         style?: {
             fontFamily?: string;
             chart?: {
@@ -1146,6 +1931,12 @@ declare module 'vue-data-ui' {
                         dataLabels?: {
                             show?: boolean;
                             hideUnderValue?: number;
+                            prefix?: string;
+                            suffix?: string;
+                        };
+                        value?: {
+                            rounding?: number;
+                            show?: boolean;
                         };
                         percentage?: {
                             color?: string;
@@ -1195,6 +1986,7 @@ declare module 'vue-data-ui' {
                         };
                     };
                     donut?: {
+                        borderWidth?: number;
                         strokeWidth?: number;
                     };
                 };
@@ -1246,6 +2038,12 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
+            columnNames?: {
+                series?: string;
+                value?: string;
+                percentage?: string;
+            },
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -1273,12 +2071,19 @@ declare module 'vue-data-ui' {
     }>;
 
     export type VueUiWaffleConfig = {
+        useBlurOnHover?: boolean;
         style?: {
             fontFamily?: string;
             chart?: {
                 backgroundColor?: string;
                 color?: string;
                 layout?: {
+                    labels?: {
+                        dataLabels?: {
+                            prefix?: string;
+                            suffix?: string;
+                        };
+                    };
                     grid?: {
                         size?: number;
                         spaceBetween?: number;
@@ -1337,6 +2142,12 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
+            columnNames?: {
+                series?: string;
+                value?: string;
+                percentage?: string;
+            };
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -1434,6 +2245,7 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -1457,12 +2269,16 @@ declare module 'vue-data-ui' {
         };
         translations?: {
             target?: string;
+            value?: string;
+            datapoint?: string;
         };
     };
 
     export type VueUiRadarDatasetCategoryItem = {
         name: string;
         color?: string;
+        prefix?: string;
+        suffix?: string;
     };
 
     export type VueUiRadarDatasetSerieItem = {
@@ -1617,6 +2433,7 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -1898,6 +2715,7 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -2170,6 +2988,7 @@ declare module 'vue-data-ui' {
         };
         table?: {
             show?: boolean;
+            responsiveBreakpoint?: number;
             th?: {
                 backgroundColor?: string;
                 color?: string;
@@ -2245,6 +3064,8 @@ declare module 'vue-data-ui' {
                 color?: string;
                 roundingValue?: number;
                 valueType?: "latest" | "sum" | "average";
+                prefix?: string;
+                suffix?: string;
             };
             title?: {
                 show?: boolean;
@@ -2657,7 +3478,7 @@ declare module 'vue-data-ui' {
     }>;
 
     export type VueUiSkeletonConfig = {
-        type?: "bar" | "chestnut" | "donut" | "gauge" | "line" | "onion" | "quadrant" | "radar" | "rating" | "table" | "verticalBar" | "waffle" | "heatmap" | "candlestick" | "pyramid";
+        type?: "bar" | "chestnut" | "donut" | "gauge" | "line" | "onion" | "quadrant" | "radar" | "rating" | "table" | "verticalBar" | "waffle" | "heatmap" | "candlestick" | "pyramid" | "wheel" | "rings" | "donutEvolution";
         style?: {
             backgroundColor?: string;
             color?: string;
@@ -2672,6 +3493,17 @@ declare module 'vue-data-ui' {
                     color?: string;
                     strokeWidth?: number;
                     showPlots?: boolean;
+                };
+            };
+            donutEvolution?: {
+                axis?: {
+                    show?: boolean;
+                    color?: string;
+                    strokeWidth?: number;
+                };
+                donuts?: {
+                    strokeWidth?: number;
+                    color?: string;
                 };
             };
             bar?: {
@@ -2760,10 +3592,25 @@ declare module 'vue-data-ui' {
                     strokeWidth?: number;
                 };
             };
+            pyramid?: {
+                color?: string;
+            };
+            wheel?: {
+                color?: string;
+            };
+            rings?: {
+                color?: string;
+            }
         };
     };
 
     export const VueUiSkeleton: DefineComponent<{
         config?: VueUiSkeletonConfig
     }>;
+
+    export type VueDataUiConfig = VueUi3dBarConfig | VueUiAgePyramidConfig | VueUiAnnotatorConfig | VueUiCandlestickConfig | VueUiChestnutConfig | VueUiDashboardConfig | VueUiDigitsConfig | VueUiDonutConfig | VueUiDonutEvolutionConfig | VueUiGaugeConfig | VueUiHeatmapConfig | VueUiMiniLoaderConfig | VueUiMoleculeConfig | VueUiMoodRadarConfig | VueUiOnionConfig | VueUiQuadrantConfig | VueUiRadarConfig | VueUiRatingConfig | VueUiRelationCircleConfig | VueUiRingsConfig | VueUiScatterConfig | VueUiScreenshotConfig | VueUiSkeletonConfig | VueUiSmileyConfig | VueUiSparkHistogramConfig | VueUiSparkStackBarConfig | VueUiSparkbarConfig | VueUiSparklineConfig | VueUiTableConfig | VueUiTableSparklineConfig | VueUiThermometerConfig | VueUiTiremarksConfig | VueUiVerticalBarConfig | VueUiWaffleConfig | VueUiWheelConfig | VueUiXyConfig;
+
+    export type VueDataUiConfigKey = "vue_ui_3d_bar" | "vue_ui_age_pyramid" | "vue_ui_annotator" | "vue_ui_candlestick" | "vue_ui_chestnut" | "vue_ui_dashboard" | "vue_ui_digits" | "vue_ui_donut" | "vue_ui_donut_evolution" | "vue_ui_gauge" | "vue_ui_heatmap" | "vue_ui_mini_loader" | "vue_ui_molecule" | "vue_ui_mood_radar" | "vue_ui_onion" | "vue_ui_quadrant" | "vue_ui_radar" | "vue_ui_rating" | "vue_ui_relation_circle" | "vue_ui_rings" | "vue_ui_scatter" | "vue_ui_screenshot" | "vue_ui_skeleton" | "vue_ui_smiley" | "vue_ui_sparkhistogram" | "vue_ui_sparkstackbar" | "vue_ui_sparkbar" | "vue_ui_sparkline" | "vue_ui_table" | "vue_ui_table_sparkline" | "vue_ui_thermometer" | "vue_ui_tiremarks" | "vue_ui_vertical_bar" | "vue_ui_waffle" | "vue_ui_wheel" | "vue_ui_xy";
+
+    export const getVueDataUiConfig: () => VueDataUiConfig;
 }
