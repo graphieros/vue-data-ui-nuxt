@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "upgrade": "node upgrade.cjs"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.6",
@@ -16,6 +17,6 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "vue-data-ui": "^2.1.98"
+    "vue-data-ui": "^2.1.99"
   }
 }
