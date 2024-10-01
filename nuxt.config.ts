@@ -2,10 +2,12 @@
 
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
   // vue: {
   //   compilerOptions: {
   //     isCustomElement: (tag) => tag.startsWith("VueUi")
   //   }
   // }
+  devtools: { enabled: true },
+
+  compatibilityDate: "2024-09-29"
 })
