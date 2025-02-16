@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-
 export default defineNuxtConfig({
   // vue: {
   //   compilerOptions: {
@@ -8,6 +7,6 @@ export default defineNuxtConfig({
   //   }
   // }
   devtools: { enabled: true },
-
-  compatibilityDate: "2024-09-29"
-})
+  plugins: ["./plugins/vue-data-ui.client.ts"],
+  compatibilityDate: "2024-09-29",
+});
