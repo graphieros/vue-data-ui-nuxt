@@ -11,8 +11,8 @@
     "upgrade": "node upgrade.cjs"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^2.4.1",
-    "nuxt": "^3.17.4",
+    "@nuxt/devtools": "^2.5.0",
+    "nuxt": "^3.17.5",
     "vue": "^3.5.16",
     "vue-router": "^4.5.1"
   },
