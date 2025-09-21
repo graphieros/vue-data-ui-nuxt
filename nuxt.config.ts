@@ -9,4 +9,5 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   plugins: ["./plugins/vue-data-ui.client.ts"],
   compatibilityDate: "2024-09-29",
+  css: ['vue-data-ui/style.css']
 });

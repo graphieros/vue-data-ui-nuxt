@@ -1,6 +1,9 @@
 <script setup lang="ts">
 
-import { type VueUiXyConfig, type VueUiXyDatasetItem, VueUiXy } from "vue-data-ui";
+import { type VueUiXyConfig, type VueUiXyDatasetItem } from "vue-data-ui/vue-ui-xy"; // treeshaken
+
+import VueUiXy from 'vue-data-ui/vue-ui-xy' // treeshaken
+
 
 const config = ref<VueUiXyConfig>({
     chart: {
