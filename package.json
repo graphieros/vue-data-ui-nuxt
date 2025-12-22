@@ -17,6 +17,6 @@
     "vue-router": "^4.6.4"
   },
   "dependencies": {
-    "vue-data-ui": "^3.9.11"
+    "vue-data-ui": "^3.9.12"
   }
 }
