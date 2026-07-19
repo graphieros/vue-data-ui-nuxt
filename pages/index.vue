@@ -4,6 +4,7 @@ import { type VueUiXyConfig, type VueUiXyDatasetItem } from "vue-data-ui/vue-ui-
 
 import VueUiXy from 'vue-data-ui/vue-ui-xy' // treeshaken
 
+import('vue-data-ui/style.css');
 
 const config = ref<VueUiXyConfig>({
     chart: {
