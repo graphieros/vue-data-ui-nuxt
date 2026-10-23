@@ -2,4 +2,5 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  css: ['vue-data-ui/style.css'],
 });
