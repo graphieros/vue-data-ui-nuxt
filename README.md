@@ -4,9 +4,6 @@ Look at the [Nuxt 4 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
-This project uses pnpm 12.15.0, pinned in `package.json`. Install it using the
-[pnpm installation instructions](https://pnpm.io/installation), then install dependencies:
-
 ```bash
 pnpm install
 ```
