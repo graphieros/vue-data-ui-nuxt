@@ -1,4 +1,4 @@
 allowBuilds:
   esbuild: true
 minimumReleaseAgeExclude:
-  - vue-data-ui@3.28.4
+  - vue-data-ui@3.28.4 || 3.28.5
