@@ -103,6 +103,22 @@ const { data: previews, error } = await useFetch("/api/chart-previews");
         </article>
       </div>
     </section>
+    <section aria-labelledby="parent-size-title">
+      <h2 id="parent-size-title">Size a chart with useParentSize</h2>
+      <p>
+        Introduced in vue-data-ui 3.28.6, <code>useParentSize</code> measures
+        the parent of a template ref. Drag the container’s bottom-right corner
+        to resize it, and adjust <code>offsetHeight</code>, <code>scale</code>,
+        and <code>observe</code> to see how they affect the XY chart dimensions.
+        Dimensions are capped at the viewport size by default.
+      </p>
+      <ClientOnly>
+        <ExampleParentSize />
+        <template #fallback>
+          <p role="status">Loading parent size example…</p>
+        </template>
+      </ClientOnly>
+    </section>
     <section aria-labelledby="components-title">
       <h2 id="components-title">All Vue Data UI components</h2>
       <p>
