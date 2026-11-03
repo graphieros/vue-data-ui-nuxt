@@ -167,8 +167,8 @@ importers:
   .:
     dependencies:
       vue-data-ui:
-        specifier: ^3.28.7
-        version: 3.28.7(vue@3.5.44)
+        specifier: ^3.28.8
+        version: 3.28.8(vue@3.5.44)
     devDependencies:
       '@nuxt/devtools':
         specifier: ^4.0.0
@@ -3461,8 +3461,8 @@ packages:
   vue-component-type-helpers@3.3.13:
     resolution: {integrity: sha512-02KCxSmKDhIITjKyJ4QT5csP6L0WoRborLqY/34a40+S9uvMvdNgMV0yVjO3p2Gkz3ZoPmFz/0JsGHacwJYTxw==}
 
-  vue-data-ui@3.28.7:
-    resolution: {integrity: sha512-QZP0SYW/7RoKVdvER1hDcQSnXfkIIpqde3zc6X6m0c8mP0UNS5MwP+/VJtDtsfnijhWz8BTDUZG7ij6Rwx+M+A==}
+  vue-data-ui@3.28.8:
+    resolution: {integrity: sha512-zPHEEa7oBsIfb9EBnSlyoI1k9D6T2v3EQhu7li03Fc4jpSkpF56fHjOG4Mb/AvhvO6THN5Fa90DyeKT3UnESig==}
     peerDependencies:
       jspdf: '>=3.0.1'
       vue: '>=3.3.0'
@@ -7109,7 +7109,7 @@ snapshots:
 
   vue-component-type-helpers@3.3.13: {}
 
-  vue-data-ui@3.28.7(vue@3.5.44):
+  vue-data-ui@3.28.8(vue@3.5.44):
     dependencies:
       vue: 3.5.44
 
